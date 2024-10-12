@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"></script>
+  </head>
+  <body>
+    <div class="container mx-auto p-5">
+      <div class="card bg-white shadow-lg rounded-lg p-5">
+        <h1 class="card-title text-2xl font-bold mb-4">Weather App</h1>
+        <form id="weather-form" class="search-form">
+          <input
+            type="text"
+            id="Search"
+            name="Search"
+            class="Search border p-2 w-full"
+            placeholder="Enter city name"
+            required
+          />
+          <button type="submit" class="btn bg-blue-500 text-white p-2 mt-2">
+            Search
+          </button>
+        </form>
+        <div class="suggestions" style="display: none"></div>
+        <div id="weather-info" class="weather-info mt-4" >
+          <h1 class="text-2xl font-bold mb-4 sample">Sample output</h1>
+          <div class="city-name text-xl font-semibold">Germany</div>
+          <div class="temperature">20°C</div>
+          <div class="condition">Rainy</div>
+          <div class="weather-image">
+            <img src="images/snow.png"  alt="weather-condition">
+          </div>
+          <div class="humidity">Humidity : 98%</div>
+          <div class="wind-speed">Wind Speed : 5.2 m/s</div>
+        </div>
+        <div class="weather-image mt-4">
+          <img
+            src="https://openweathermap.org/img/wn/01d@2x.png"
+            id="weather-image"
+            class="weather-image box shadow"
+            alt="Weather Image"
+            hidden
+          />
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="js/weather.js"></script>
+  </body>
+</html>

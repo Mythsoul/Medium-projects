@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #A0D8E8, #B0E0E6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: contain;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+.weather-info {
+    margin-top: 20px;
+}
+
+.temperature {
+    font-size: 3em;
+    font-weight: bold;
+}
+.city-name {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.condition {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.humidity, .wind-speed {
+    font-size: 1.2em;
+}
+
+
+
+.suggestions {
+    border: 1px solid #ccc;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    width: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;;
+
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+    
+}
+
+.sample{ 
+    color: red;
+}

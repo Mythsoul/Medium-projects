@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= heading %></title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary" id="themeToggleBtn">Toggle Dark Mode</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4"><%= heading %></h1>
+
+    <% if (locals.post) { %>
+      <form id="editForm" method="post" action="/api/posts/<%= post.id %>">
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" value="<%= post.title %>" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <textarea name="content" class="form-control" rows="10" placeholder="Content" required><%= post.content %></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" name="author" class="form-control" value="<%= post.author %>" placeholder="Author" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block"><%= submit %></button>
+      </form>
+    <% } else { %>
+      <form id="newPostForm" method="post" action="/api/posts">
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <textarea name="content" class="form-control" rows="10" placeholder="Content" required></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" name="author" class="form-control" placeholder="Author" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block"><%= submit %></button>
+      </form>
+    <% } %>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+    });
+  </script>
+</body>
+
+</html>
