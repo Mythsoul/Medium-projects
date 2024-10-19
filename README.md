@@ -33,7 +33,7 @@ Install dependencies: Navigate to the project directory and run:
 Access the application: Open your browser and navigate to http://localhost:3000 (or the specified port).
 
 # Upcoming Projects
-I have more projects in the pipeline that will be added soon! And the projects here will be updated too 
+I have more projects in the pipeline that will be added soon! And the projects here will be updated too..
 
  # Help will be apreciated 
 
